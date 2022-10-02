@@ -1,3 +1,6 @@
+import updateModel from "../utils/updateModel.js";
+
+
 function init(getData) {
     const slider = document.querySelector('#slider-cost')
     const data = getData()
@@ -19,6 +22,26 @@ function init(getData) {
             suffix: ''
         })
     })
+
+
+    
+    slider.noUiSlider.on('slide', () => {
+
+        let sliderValue = slider.noUiSlider.get()
+
+        sliderValue = +sliderValue.split('.')[0].split(" ").join('')
+
+        
+
+        updateModel(slider, {
+            cost: sliderValue,
+            onUpdate: 'costSlider'
+
+        })
+        
+    })
+
+
 }
 
 export default init
