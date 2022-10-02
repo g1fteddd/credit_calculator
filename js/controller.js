@@ -1,5 +1,7 @@
 import * as Model from "./model.js"
+import updateResultsView from "./view/updateResultsView.js"
 import programs from "./view/radioPrograms.js"
+
 
 window.onload = function () {
     const getData = Model.getData
@@ -8,11 +10,14 @@ window.onload = function () {
     programs(getData)
 
     document.addEventListener('updateForm', (event) => {
-        console.log("FIRRRRREEEED!!!!")
-        console.log(event.detail)
 
 
         Model.setData(event.detail)
+
+        const data = Model.getData()
+        const results = Model.getResults()
+
+        updateResultsView(results)
     })
 
 
