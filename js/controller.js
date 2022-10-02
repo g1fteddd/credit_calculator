@@ -3,6 +3,7 @@ import updateResultsView from "./view/updateResultsView.js"
 import programs from "./view/radioPrograms.js"
 
 import costInput from './view/costInput.js'
+import costRange from './view/costRange.js'
 
 
 window.onload = function () {
@@ -12,6 +13,7 @@ window.onload = function () {
     programs(getData)
 
     costInput(getData)
+    costRange(getData)
 
     document.addEventListener('updateForm', (event) => {
 
