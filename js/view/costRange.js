@@ -41,7 +41,7 @@ function init(getData) {
         
     })
 
-
+    return slider
 }
 
 export default init

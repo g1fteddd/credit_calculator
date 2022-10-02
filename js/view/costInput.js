@@ -48,6 +48,8 @@ function init(getData) {
         onUpdate: 'inputCost'
     })
   })
+
+  return cleaveInput
   
 }
 
