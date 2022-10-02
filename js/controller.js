@@ -7,7 +7,13 @@ window.onload = function () {
 
     programs(getData)
 
+    document.addEventListener('updateForm', (event) => {
+        console.log("FIRRRRREEEED!!!!")
+        console.log(event.detail)
 
+
+        Model.setData(event.detail)
+    })
 
 
 }

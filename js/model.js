@@ -13,5 +13,18 @@ function getData() {
     return {...data}
 }
 
+function setData(newData) {
 
-export { getData }
+    console.log("new data", newData)
+
+
+    data = {
+        ...data,
+        ...newData
+    }
+
+    console.log("Updated Data", data)
+}
+
+
+export { getData, setData }
