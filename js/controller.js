@@ -6,6 +6,8 @@ import { updateMinPercents } from "./view/utils.js"
 import costInput from './view/costInput.js'
 import costRange from './view/costRange.js'
 
+import paymentInput from './view/paymentInput.js'
+
 
 
 window.onload = function () {
@@ -16,6 +18,8 @@ window.onload = function () {
 
     const cleaveCost = costInput(getData)
     const sliderCost = costRange(getData)
+
+    const cleavePayment = paymentInput(getData)
 
     document.addEventListener('updateForm', (event) => {
 
@@ -46,6 +50,10 @@ window.onload = function () {
         if (data.onUpdate !== 'costSlider') {
             console.log("UPDATE COST SLIDER")
             sliderCost.noUiSlider.set(data.cost)
+        }
+
+        if (data.onUpdate !== 'inputPayment') {
+            cleavePayment.setRawValue(data.payment)
         }
     }
 
