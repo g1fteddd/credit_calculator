@@ -21,7 +21,7 @@ function init(getData) {
       console.log(event.target.id);
 
       updateModel(event.target, {
-		onUpdate: "radioProgram",
+        onUpdate: "radioProgram",
         selectedProgram: parseFloat(event.target.value),
         id: event.target.id,
       });

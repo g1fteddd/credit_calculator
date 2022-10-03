@@ -1,9 +1,11 @@
 import * as Model from "./model.js"
 import updateResultsView from "./view/updateResultsView.js"
 import programs from "./view/radioPrograms.js"
+import { updateMinPercents } from "./view/utils.js"
 
 import costInput from './view/costInput.js'
 import costRange from './view/costRange.js'
+
 
 
 window.onload = function () {
@@ -31,6 +33,12 @@ window.onload = function () {
 
 
     function updateFormAndSliders(data) {
+
+        if (data.onUpdate === "radioProgram") {
+            updateMinPercents(data)
+        }
+
+
         if (data.onUpdate !== "inputCost") {
             console.log("UPDATE INPUT COST")
             cleaveCost.setRawValue(data.cost)

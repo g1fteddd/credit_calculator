@@ -3,6 +3,8 @@ let data = {
     cost: 12000000,
     minPrice: 375000,
     maxPrice: 100000000,
+    minPaymentPercents: 0.15,
+    maxPaymentPercents: 0.9,
     programs: {
         base: 0.1,
         it: 0.047,
@@ -27,6 +29,14 @@ function getResults() {
 function setData(newData) {
 
     console.log("new data", newData)
+
+    if (newData.onUpdate === "radioProgram") {
+        if (newData.id === "zero-value") {
+            data.minPaymentPercents = 0
+        } else {
+            data.minPaymentPercents = 0.15
+        }
+    }
 
     if (newData.onUpdate === "inputCost") {
         if (newData.cost < data.minPrice)
