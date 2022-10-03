@@ -42,6 +42,14 @@ window.onload = function () {
 
         if (data.onUpdate === "radioProgram") {
             updateMinPercents(data)
+
+
+            sliderPayment.noUiSlider.updateOptions({
+                range: {
+                    'min': data.minPaymentPercents * 100,
+                    'max': data.maxPaymentPercents * 100
+                }
+            })
         }
 
 
