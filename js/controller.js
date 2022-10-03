@@ -54,16 +54,22 @@ window.onload = function () {
 
 
         if (data.onUpdate !== "inputCost") {
-            console.log("UPDATE INPUT COST")
+
             cleaveCost.setRawValue(data.cost)
         }
         if (data.onUpdate !== 'costSlider') {
-            console.log("UPDATE COST SLIDER")
+
             sliderCost.noUiSlider.set(data.cost)
         }
 
         if (data.onUpdate !== 'inputPayment') {
             cleavePayment.setRawValue(data.payment)
+        }
+
+        if (data.onUpdate !== 'paymentSlider') {
+            console.log(data.paymentPercents)
+            sliderPayment.noUiSlider.set(data.paymentPercents * 100)
+
         }
     }
 
