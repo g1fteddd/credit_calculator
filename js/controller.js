@@ -29,6 +29,11 @@ window.onload = function () {
     const cleaveTime = timeInput(getData)
     const sliderTime = timeRange(getData)
 
+
+    Model.setData({})
+    const results = Model.getResults()
+    updateResultsView(results)
+
     document.addEventListener('updateForm', (event) => {
 
 
