@@ -16,10 +16,6 @@ function init(getData) {
 
   radioBtns.forEach((radioBtn) => {
     radioBtn.addEventListener("change", (event) => {
-      console.log(event.target);
-      console.log(parseFloat(event.target.value));
-      console.log(event.target.id);
-
       updateModel(event.target, {
         onUpdate: "radioProgram",
         selectedProgram: parseFloat(event.target.value),

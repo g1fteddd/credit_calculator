@@ -39,7 +39,7 @@ function getResults() {
 
 function setData(newData) {
 
-    console.log("new data", newData)
+
 
     if (newData.onUpdate === "radioProgram") {
         if (newData.id === "zero-value") {
@@ -63,6 +63,8 @@ function setData(newData) {
         if (data.payment < data.getMinPayment()) {
             data.payment = data.getMinPayment()
         }
+
+        data.paymentPercents = (data.payment * 100) / newData.cost / 100
         
     }
 
@@ -111,22 +113,17 @@ function setData(newData) {
 
     // Рассчёт ипотеки
     const months = data.time * 12
-    console.log('months', months);
 
     const totalAmount = data.cost - data.payment
-    console.log('totalAmount', totalAmount);
 
     const monthRate = data.selectedProgram / 12
-    console.log('monthRate', monthRate);
 
     const generalRate = (1 + monthRate) ** months
-    console.log('generalRate', generalRate);
 
     const monthPayment = (totalAmount * monthRate * generalRate) / (generalRate - 1)
-    console.log('monthPayment', monthPayment);
 
     const overPayment = monthPayment * months - totalAmount
-    console.log('overPayment', overPayment);
+
 
     results = {
         rate: data.selectedProgram,
@@ -134,9 +131,6 @@ function setData(newData) {
         monthPayment,
         overPayment
     }
-
-    console.log("Updated Data", data)
-    console.log("new result", results);
 }
 
 

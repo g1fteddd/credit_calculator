@@ -78,9 +78,7 @@ window.onload = function () {
         }
 
         if (data.onUpdate !== 'paymentSlider') {
-            console.log(data.paymentPercents)
             sliderPayment.noUiSlider.set(data.paymentPercents * 100)
-
         }
 
         if (data.onUpdate !== "inputTime") {
